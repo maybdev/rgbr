@@ -4,11 +4,13 @@
 ***
 
 ### ⛳ Variables
-**`rgbr.width`**  
-The number of available pixels horizontally.
+**`rgbr.width`** *(default 256)*  
+The number of available pixels horizontally.  
+*⚠️ Changing this variable will not change the canvas width ⚠️*
 
-**`rgbr.height`**  
-The number of available pixels vertically.
+**`rgbr.height`** *(default 256)*  
+The number of available pixels vertically.  
+*⚠️ Changing this variable will not change the canvas height ⚠️*
 
 ### 🎯 Functions
 **`rgbr.pixel(x,y,r,g,b)`**  
