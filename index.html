@@ -1,14 +1,14 @@
 <script src="./rgbr.js"></script>
 
-<input type=file id=f style="position:fixed;top:0;left:0;margin:16px;">
+<input type=file id=f style="position:fixed;top:0;left:0;margin:8px;">
 
 <script>
   f.onchange=()=>{
   var i=new Image(),c=document.createElement("canvas");
   c.width=c.height=256;
   i.onload=()=>{
-  var x=c.getContext("2d");
-  x.drawImage(i,0,0,256,256);
+  var x=c.getContext("2d"),s=Math.max(256/i.width,256/i.height),w=256/s,h=256/s;
+  x.drawImage(i,(i.width-w)/2,(i.height-h)/2,w,h,0,0,256,256);
   var d=x.getImageData(0,0,256,256).data;
   for(var p=0,j=0;p<65536;p++,j+=4)rgbr.pixel(p%256,p/256|0,d[j],d[j+1],d[j+2]);
   };
