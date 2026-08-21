@@ -1,0 +1,17 @@
+<script src="./rgbr.js"></script>
+
+<input type=file id=f style="position:fixed;top:0;left:0;margin:16px;">
+
+<script>
+  f.onchange=()=>{
+  var i=new Image(),c=document.createElement("canvas");
+  c.width=c.height=256;
+  i.onload=()=>{
+  var x=c.getContext("2d");
+  x.drawImage(i,0,0,256,256);
+  var d=x.getImageData(0,0,256,256).data;
+  for(var p=0,j=0;p<65536;p++,j+=4)rgbr.pixel(p%256,p/256|0,d[j],d[j+1],d[j+2]);
+  };
+  i.src=URL.createObjectURL(f.files[0]);
+  };
+</script>
