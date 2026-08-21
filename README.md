@@ -25,3 +25,13 @@ Fills the canvas with the color **(r,g,b)**.
 **`rgbr.black()`**  
 Fills the canvas with black.  
 *⚠️ This is faster than `rgbr.clear(0,0,0)` ⚠️*
+
+***
+
+```html
+<script src="https://maybdev.github.io/rgbr/rgbr.js"></script>
+
+<script>
+  rgbr.clear(255,255,255);
+</script>
+```
