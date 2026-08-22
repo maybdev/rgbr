@@ -25,7 +25,7 @@ Fills the canvas with black.
 * **If no argument is given**
   - Returns the logical width *(canvas width / 3)*
 * **If an argument is given**
-  - Changes the logical width to **w**
+  - Changes the logical width to **w** *(may reset the canvas contents)*
 
 *⚠️ Will break if **w** is not an integer ⚠️*
 
@@ -33,7 +33,7 @@ Fills the canvas with black.
 * **If no argument is given**
   - Returns the logical height *(canvas height / 3)*
 * **If an argument is given**
-  - Changes the logical height to **h**
+  - Changes the logical height to **h** *(may reset the canvas contents)*
 
 *⚠️ Will break if **h** is not an integer ⚠️*
 
