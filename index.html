@@ -3,15 +3,15 @@
 <input type=file id=f style="position:fixed;top:0;left:0;margin:8px;">
 
 <script>
-  f.onchange=()=>{
-  var i=new Image(),c=document.createElement("canvas");
-  c.width=c.height=256;
-  i.onload=()=>{
-  var x=c.getContext("2d"),s=Math.max(256/i.width,256/i.height),w=256/s,h=256/s;
-  x.drawImage(i,(i.width-w)/2,(i.height-h)/2,w,h,0,0,256,256);
-  var d=x.getImageData(0,0,256,256).data;
-  for(var p=0,j=0;p<65536;p++,j+=4)rgbr.pixel(p%256,p/256|0,d[j],d[j+1],d[j+2]);
-  };
-  i.src=URL.createObjectURL(f.files[0]);
-  };
+    f.onchange=()=>{
+    var i=new Image(),c=document.createElement("canvas");
+    c.width=rgbr.width(),c.height=rgbr.height();
+    i.onload=()=>{
+    var x=c.getContext("2d"),s=Math.max(rgbr.width()/i.width,rgbr.height()/i.height),w=rgbr.width()/s,h=rgbr.height()/s;
+    x.drawImage(i,(i.width-w)/2,(i.height-h)/2,w,h,0,0,rgbr.width(),rgbr.height());
+    var d=x.getImageData(0,0,rgbr.width(),rgbr.height()).data;
+    for(var p=0,j=0;p<rgbr.width()*rgbr.height();p++,j+=4)rgbr.pixel(p%rgbr.width(),p/rgbr.width()|0,d[j],d[j+1],d[j+2]);
+    };
+    i.src=URL.createObjectURL(f.files[0]);
+    };
 </script>
